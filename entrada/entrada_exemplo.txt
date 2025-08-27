@@ -1,0 +1,11 @@
+Algoritmos e Estruturas de Dados
+Manipulação de arquivos
+
+Inteiro
+4 8 10
+
+Real
+10,3 19,7
+
+Lógico
+true false
