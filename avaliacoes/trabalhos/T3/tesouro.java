@@ -49,7 +49,7 @@ public class tesouro {
                 // PEGA OS VALORES DE CADA POSIÇÃO
                 posicao.linha = reader.nextInt();
                 posicao.coluna = reader.nextInt();
-                matriz[linha][coluna] = posicao.resultado();
+                matriz[linha][coluna] = posicao;
             }
         }
 
