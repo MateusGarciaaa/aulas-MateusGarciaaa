@@ -26,7 +26,7 @@ public class tesouro {
 
 
         try {
-            file_reader = new FileReader("entradas/mapa.txt");
+            file_reader = new FileReader("entrada/mapa.txt");
             reader = new Scanner(file_reader);
             
         } catch (Exception e) {
@@ -37,28 +37,44 @@ public class tesouro {
         //Pegar a quantidade de linhas e colunas do arquivo
         qtdLinhas = reader.nextInt();
         qtdColunas = reader.nextInt();
+        
+        //Criação da Matriz
+        Posicao[][] matriz = new Posicao[qtdLinhas][qtdColunas];
+
 
         //Pegar a posição inicial
         posicaoInicalLinha = reader.nextInt();
         posicaoInicalColuna = reader.nextInt();
 
-        Posicao[][] matriz = new Posicao[qtdLinhas][qtdColunas];
+        
+        //Teste   
+        System.out.println("Quantidade de linhas: " + qtdLinhas + "\nQuantidade de colunas: " + qtdColunas + "\nPosição inicial linha: " + posicaoInicalLinha + "\nPosição inicial coluna: " + posicaoInicalColuna);
+
+
+
 
 
         for (int linha = 0; linha < matriz.length; linha++) {
             for (int coluna = 0; coluna < matriz[0].length; coluna++) {
-                // PEGA OS VALORES DE CADA POSIÇÃO
-                posicao.linha = reader.nextInt();
-                posicao.coluna = reader.nextInt();
-                matriz[linha][coluna] = new Posicao(posicao.linha, posicao.coluna);
-            }
-        }
+                //Lê os valores em cada posição
+                matriz[linha][coluna] = new Posicao();
+                matriz[linha][coluna].linha = reader.nextInt();
+                matriz[linha][coluna].coluna = reader.nextInt();
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                System.out.println(matriz[i][j]);
             }
         }
+        System.out.println("a");
+
+        // for (int i = 0; i < matriz.length; i++) {
+        //     for (int j = 0; j < matriz[0].length; j++) {
+        //         System.out.println(matriz[i][j]);
+        //     }
+        // }
+
+
+
+
+
 
 
 

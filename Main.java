@@ -2,7 +2,7 @@ import aulas.*;
 import avaliacoes.trabalhos.T2.ListaDeExercicios;
 import listas.*;
 import utils.IO;
-import avaliacoes.trabalhos.T3.tesouro;
+import avaliacoes.trabalhos.T3.*;
 
 public class Main {
 
