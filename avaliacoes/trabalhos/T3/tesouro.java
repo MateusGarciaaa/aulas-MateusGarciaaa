@@ -41,75 +41,35 @@ public class tesouro {
         posicao.linha = reader.nextInt();
         posicao.coluna = reader.nextInt();    
 
-        int[][] matriz = new int[qtdLinhas][qtdColunas];
+        Posicao[][] matriz = new Posicao[qtdLinhas][qtdColunas];
 
 
         for (int linha = 0; linha < matriz.length; linha++) {
             for (int coluna = 0; coluna < matriz[0].length; coluna++) {
-                matriz[linha][coluna] = posicao;
+                // PEGA OS VALORES DE CADA POSIÇÃO
+                posicao.linha = reader.nextInt();
+                posicao.coluna = reader.nextInt();
+                matriz[linha][coluna] = posicao.resultado();
+            }
+        }
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                System.out.println(matriz[i][j]);
             }
         }
 
 
 
-
-
-
-
-        // while () {
-        //     int linhaDesejada = posicao.linha;
-        //     int colunaDesejada = posicao.coluna;
+        // FECHAMENTO DO ARQUIVO
+        try {
+            file_reader.close();            
+            reader.close();
             
-        //     for (int i = 0; i < linhaDesejada; i++) {
-        //         reader.nextLine();
-        //     }
-
-        //     for (int i = 0; i <= colunaDesejada; i++) {
-        //         if (colunaDesejada == 0) {
-        //             posicao.linha = reader.nextInt();
-        //             posicao.coluna = reader.nextInt();
-        //             break;
-        //         }
-        //         reader.next();
-        //         reader.next();
-
-        //         posicao.linha = reader.nextInt();
-        //         posicao.coluna = reader.nextInt();
-        //     }
-        // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // // FECHAMENTO DO ARQUIVO
-        // try {
-        //     file_reader.close();
-            
-        //     reader.close();
-            
-        // } catch (IOException e) {
-        //     IO.imprimirErro("Erro ao abrir o arquivo");
-        //     e.printStackTrace();
-        // }
+        } catch (IOException e) {
+            IO.imprimirErro("Erro ao abrir o arquivo");
+            e.printStackTrace();
+        }
     }
 
     public static boolean conferirRepeticao(int[] vetor){
@@ -128,7 +88,7 @@ public class tesouro {
         }
 
         return true;
-    }w
+    }
 
 
 }
