@@ -6,13 +6,12 @@ public class Posicao {
     int coluna;
     
 
-    public int[] resultado(){
-        int[] valor = new int[2];
+    public Posicao(int linha, int coluna){
+        this.linha = linha;
+        this.coluna = coluna;
+    }
 
-
-        valor[1] = this.linha;
-        valor[2] = this.coluna;
-
-        return valor;
+    public Posicao(){
+        
     }
 }

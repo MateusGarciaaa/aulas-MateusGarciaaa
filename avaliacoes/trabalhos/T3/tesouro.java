@@ -20,8 +20,9 @@ public class tesouro {
         Scanner reader = null;
         int qtdLinhas;
         int qtdColunas;
-        Posicao posicao = new Posicao();
-        
+        int posicaoInicalLinha;
+        int posicaoInicalColuna;
+        Posicao posicao = new Posicao();        
 
 
         try {
@@ -38,8 +39,8 @@ public class tesouro {
         qtdColunas = reader.nextInt();
 
         //Pegar a posição inicial
-        posicao.linha = reader.nextInt();
-        posicao.coluna = reader.nextInt();    
+        posicaoInicalLinha = reader.nextInt();
+        posicaoInicalColuna = reader.nextInt();
 
         Posicao[][] matriz = new Posicao[qtdLinhas][qtdColunas];
 
@@ -49,7 +50,7 @@ public class tesouro {
                 // PEGA OS VALORES DE CADA POSIÇÃO
                 posicao.linha = reader.nextInt();
                 posicao.coluna = reader.nextInt();
-                matriz[linha][coluna] = posicao;
+                matriz[linha][coluna] = new Posicao(posicao.linha, posicao.coluna);
             }
         }
 
