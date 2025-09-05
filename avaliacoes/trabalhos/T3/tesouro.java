@@ -75,13 +75,26 @@ public class tesouro {
 
 
         System.out.println("\n\n========================\n\nCaminho Percorrido: ");
+        // int contador = 1;
+        // for (int i = 0; i < matriz.length; i++) {        
+        //     for (int j = 0; j < matriz.length; j++) {
+        //         System.out.println("Passo " + contador + ": " + matriz[i][j].linha + "," + matriz[i][j].coluna);
+        //         contador++;
+        //     }
+        //     break;
+        // }
+
         int contador = 1;
-        for (int i = 0; i < matriz.length; i++) {        
-            for (int j = 0; j < matriz.length; j++) {
-                System.out.println("Passo " + contador + ": " + matriz[i][j].linha + "," + matriz[i][j].coluna);
-                contador++;
-            }
-            break;
+        while (posicaoInicalLinha == 1) {
+            
+            posicaoInicalLinha = matriz[posicaoInicalLinha][posicaoInicalColuna].linha;
+            posicaoInicalColuna = matriz[posicaoInicalLinha][posicaoInicalColuna].coluna;
+
+            
+            System.out.println("Passo " + contador + ": " + matriz[posicaoInicalLinha][posicaoInicalColuna].linha + "," + matriz[posicaoInicalLinha][posicaoInicalColuna].coluna);
+            contador++;
+            
+
         }
 
         // FECHAMENTO DO ARQUIVO
