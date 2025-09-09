@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-    tesouro.exercicios();
+    Aula22.aula();
     
     }
 }

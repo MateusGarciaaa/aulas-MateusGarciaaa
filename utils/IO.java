@@ -1,7 +1,9 @@
 package utils;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class IO {
@@ -143,5 +145,58 @@ public static int[][] multiplicarMatrizes(int[][]matrizUm, int[][]matrizDois){
 
     }
 
+
+    public static void criarArquivoComLista(String nome_arquivo, LinkedList<String> listaDeNomes){
+
+        BufferedWriter writer = null;
+        FileWriter file_writer = null;
+
+
+        //Gera o arquivo
+        try{
+            file_writer = new FileWriter("saida/" + nome_arquivo + ".txt");
+            writer = new BufferedWriter(file_writer);
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+
+        try {
+
+            for(int i = 1; i < listaDeNomes.size() ; i++){
+            String nome = listaDeNomes.get(i).toString();
+            writer.write(nome);
+            writer.newLine();
+            }
+           
+
+           writer.close();
+           file_writer.close();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static LinkedList<String>  criarListaComArquivo(String nomeArquivo){
+        LinkedList<String> lista = new LinkedList<>();
+        FileReader fileReader = null;
+        Scanner sc = null;
+
+        try {
+            fileReader = new FileReader("entrada/" + nomeArquivo + ".txt");
+            sc = new Scanner(fileReader);
+        } catch (Exception e) {
+            IO.imprimirErro("Erro ao abrir o arquivo");
+            e.printStackTrace();
+        }
+
+        while (sc.hasNext()) {
+            lista.add(sc.next());
+        }
+
+
+        return lista;
+    }
 }
 
