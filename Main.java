@@ -8,8 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-    Aula22.aula();
-    
+        Aula23.aula();
+
+        
+        IO.fecharScanner();        
     }
 }
 

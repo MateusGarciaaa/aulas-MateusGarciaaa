@@ -14,6 +14,10 @@ public class IO {
     }
 
 
+    public static void divisoria(){
+        System.out.println("\n===============================================================================\n");
+    }
+
     public static void imprimir(String texto){
         System.out.println(texto);
     }
