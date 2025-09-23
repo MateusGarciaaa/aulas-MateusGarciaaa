@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Aula23.aula();
+        Aula24.aula();
 
         
         IO.fecharScanner();        
