@@ -15,7 +15,7 @@ public class IO {
 
 
     public static void divisoria(){
-        System.out.println("\n===============================================================================\n");
+        System.out.println("\n===========================================\n");
     }
 
     public static void imprimir(String texto){
