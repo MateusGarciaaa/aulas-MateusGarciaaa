@@ -76,7 +76,7 @@ public class Aula25 {
                 pilha.push(token);
             }
         }
-
+        IO.divisoria();
         System.out.println("Resultado: " + resultado);
     }
 
