@@ -1,6 +1,5 @@
 run: build
 	java -cp bin Main 
-#  "AED" IFPR Algoritmo e Estrutura de Dados TADS
 
 build:
 	javac -d bin Main.java
@@ -15,3 +14,7 @@ git:
 git-clean:
 	git config --global user.name ""
 	git config --global user.email ""
+tesouro:
+	java -cp bin avaliacoes.trabalhos.T3.tesouro;
+imagem:
+	java -cp bin avaliacoes.trabalhos.T3.ManipuladorImagens;
