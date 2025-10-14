@@ -202,5 +202,30 @@ public static int[][] multiplicarMatrizes(int[][]matrizUm, int[][]matrizDois){
 
         return lista;
     }
-}
 
+
+    public static int multiplicarSemMultiplicacao(int a, int b){
+        if (b==0) {
+            return 0;
+        }
+        return a + multiplicarSemMultiplicacao(a, b-1);       
+
+    }
+
+    public static int fatorial(int numero){
+        if (numero == 0) {
+            return 1;
+        }
+
+        return numero * fatorial(numero - 1);
+    }
+
+    public static int fibonacciRecursivo(int n){
+        if (n==1|| n == 0) {
+            return n;
+        }
+        
+        return fibonacciRecursivo(n-1) + fibonacciRecursivo(n-2);     
+
+    }
+}
