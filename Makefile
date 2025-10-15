@@ -14,7 +14,15 @@ git:
 git-clean:
 	git config --global user.name ""
 	git config --global user.email ""
-tesouro:
-	java -cp bin avaliacoes.trabalhos.T3.tesouro;
-imagem:
-	java -cp bin avaliacoes.trabalhos.T3.ManipuladorImagens;
+
+tesouro: build-tesouro
+	java -cp bin avaliacoes.trabalhos.T3.tesouro
+
+build-tesouro:
+	javac -d bin avaliacoes/trabalhos/T3/tesouro.java
+
+imagem: build-imagem
+	java -cp bin avaliacoes.trabalhos.T3.ManipuladorImagens
+
+build-imagem:
+	javac -d bin avaliacoes/trabalhos/T3/ManipuladorImagens.java

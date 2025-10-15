@@ -5,12 +5,11 @@ package avaliacoes.trabalhos.T3;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-
 import utils.IO;
 
 public class tesouro {
 
-    public static void exercicios() {
+    public static void main(String[] args) {
         ex01();
     }
 
