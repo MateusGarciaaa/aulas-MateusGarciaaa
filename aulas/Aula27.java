@@ -16,7 +16,7 @@ public class Aula27 {
     }
     
     public static void ex01(){
-        
+
         int[] vetor = {2,4,6,8,10,12,14,16,18,20};
         int valor = 16;
         System.out.println("Valor desejado: " + valor);
