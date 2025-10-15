@@ -228,4 +228,26 @@ public static int[][] multiplicarMatrizes(int[][]matrizUm, int[][]matrizDois){
         return fibonacciRecursivo(n-1) + fibonacciRecursivo(n-2);     
 
     }
+
+    public static int[] pesquisaBinariaRecursiva(int[] vetor, int valor, int inicio, int fim){
+        int[] resposatas = new int[2];
+
+        if(inicio > fim){
+            return resposatas;
+        }
+
+        int meio = (inicio + fim)/2;
+
+        if(vetor[meio] == valor){
+            return resposatas;
+        }
+
+        if(valor< vetor[meio]){
+            return pesquisaBinariaRecursiva(vetor, valor, inicio, meio-1);
+        }
+
+
+
+        return pesquisaBinariaRecursiva(vetor, valor, meio+1, fim);
+    }
 }
