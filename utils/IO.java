@@ -3,6 +3,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -249,5 +251,37 @@ public static int[][] multiplicarMatrizes(int[][]matrizUm, int[][]matrizDois){
 
 
         return pesquisaBinariaRecursiva(vetor, valor, meio+1, fim);
+    }
+
+    public static HashMap<String, Integer> contagemDePalavras(String frase){
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+
+        String[] a = frase.split(" ");
+
+        for (int i = 0; i < a.length; i++) {
+            if (!hashMap.containsKey(a[i])) {
+                hashMap.put(a[i],1);
+            }else{
+                hashMap.replace(a[i], hashMap.get(a[i])+1);
+            }
+        }
+
+
+        return hashMap;
+    }
+
+    public static int contagemPalavrasDistintas(String frase){
+        HashSet<String> hashSet = new HashSet<>();
+
+        String[] a = frase.split(" ");
+
+        for (int i = 0; i < a.length; i++) {
+            hashSet.add(a[i]);
+        }
+
+
+
+        return hashSet.size();
     }
 }
