@@ -284,4 +284,71 @@ public static int[][] multiplicarMatrizes(int[][]matrizUm, int[][]matrizDois){
 
         return hashSet.size();
     }
+
+    public static int[] mergeSort_intercalar(int[] vetorUm, int[] vetorDois){
+        int[] vetorResultado = new int[vetorUm.length + vetorDois.length];
+
+        int i = 0, j = 0, k = 0;
+
+        while (i < vetorUm.length && j < vetorDois.length) {
+            if (vetorUm[i] < vetorDois[j]) {
+                vetorResultado[k] = vetorUm[i];
+                i++;
+            }else{
+                vetorResultado[k] = vetorDois[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < vetorUm.length) {
+            vetorResultado[k] = vetorUm[i];
+            i++;
+            k++;
+        }
+        
+        while (j < vetorDois.length) {
+            vetorResultado[k] = vetorDois[j];
+            j++;
+            k++;
+        }
+
+        return vetorResultado;
+    }
+
+
+    public static int[] mergeSort_rec(int[] v){
+        int[] vr, ve_ordenado, vd_ordenado;
+        if(v.length <=1){  // <- fim da recursão
+            return v;
+        }
+    
+        //Fase da divisão
+        int[] ve, vd;
+        int meio;
+    
+        meio = v.length/2;
+        ve = vetorSubVetor_copia(v, 0, meio); 
+        vd = vetorSubVetor_copia(v, meio, v.length); 
+    
+        //Recursivamente, ordena os vetores da esquerda e da direita
+        ve_ordenado = mergeSort_rec(ve);
+        vd_ordenado = mergeSort_rec(vd);
+    
+        //Fase da intercalação
+        vr = mergeSort_intercalar(ve_ordenado, vd_ordenado);
+    
+        return vr;
+    }
+
+    public static int[] vetorSubVetor_copia(int []v, int ini, int fim){
+        int i, k=0;
+        int[] sub_vetor = new int[fim - ini];
+        
+        for(i=ini; i<fim; i++){ 
+            sub_vetor[k] = v[i];
+            k++;
+        }
+        return sub_vetor;
+    }
 }

@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Aula29.aula();
+        Aula30.aula();
 
         
         IO.fecharScanner();        
